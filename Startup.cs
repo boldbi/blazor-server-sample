@@ -11,6 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using BoldBIEmbedSample.Data;
 using Microsoft.AspNetCore.Mvc;
+using BoldBIEmbedSample.Models;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace BoldBIEmbedSample
 {
@@ -33,6 +36,7 @@ namespace BoldBIEmbedSample
             services.AddSingleton<WeatherForecastService>();
         }
 
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -51,8 +55,25 @@ namespace BoldBIEmbedSample
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting();
+            try
+            {
+                string BasePath = AppDomain.CurrentDomain.BaseDirectory;
+                string jsonString = File.ReadAllText(BasePath + "\\app_data\\embedConfig.json");
+                GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
+            }
+            catch (Exception)
+            {
+                app.UseEndpoints(endpoints =>
+                {
+                    endpoints.MapBlazorHub();
+                    endpoints.MapFallbackToPage("~Views/EmbedConfigErrorLog");
+                });
+                //app.MapControllerRoute(
+                //name: "default",
+                //pattern: "{controller=Home}/{action=EmbedConfigErrorLog}");
+            }
 
+            app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();
