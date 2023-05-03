@@ -26,19 +26,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-try
-{
-    string basePath = AppDomain.CurrentDomain.BaseDirectory;
-    string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
-    GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
-}
-catch
-{
-    app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=EmbedData}/{action=EmbedConfigErrorLog}/{id?}");
-}
-
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
