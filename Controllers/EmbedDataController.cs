@@ -14,8 +14,6 @@ using System.IO;
 
 namespace BoldBIEmbedSample.Controllers
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
     public class EmbedDataController : Controller
     {
         private readonly IWebHostEnvironment hostingEnv;
@@ -33,8 +31,6 @@ namespace BoldBIEmbedSample.Controllers
                 string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
                 GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
                 return View("_Host");
-                //   return RedirectToPage("/_Host");
-                //return Pages()
             }
             catch
             {

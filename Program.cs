@@ -26,8 +26,6 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-
-
 try
 {
     string basePath = AppDomain.CurrentDomain.BaseDirectory;
@@ -50,8 +48,5 @@ app.UseRouting();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=EmbedData}/{action=EmbedConfigErrorLog}/{id?}");
-
-//app.MapBlazorHub();
-//app.MapFallbackToPage("/_Host");
 
 app.Run();
