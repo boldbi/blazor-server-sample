@@ -10,18 +10,35 @@ using BoldBIEmbedSample.Models;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
+using System.IO;
 
-namespace BoldBIEmbedSample.Controller
+namespace BoldBIEmbedSample.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class EmbedDataController : ControllerBase
+    //[Route("api/[controller]")]
+    //[ApiController]
+    public class EmbedDataController : Controller
     {
-        private readonly IWebHostEnvironment hostingEnv;
+        //private readonly IWebHostEnvironment hostingEnv;
 
-        public EmbedDataController(IWebHostEnvironment env)
+        //public EmbedDataController(IWebHostEnvironment env)
+        //{
+        //    this.hostingEnv = env;
+        //}
+
+        public IActionResult EmbedConfigErrorLog()
         {
-            this.hostingEnv = env;
+            try
+            {
+                string basePath = AppDomain.CurrentDomain.BaseDirectory;
+                string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
+                GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
+                  return RedirectToPage("/_Host");
+                //return Pages()
+            }
+            catch
+            {
+                return View("EmbedConfigErrorLog");
+            }
         }
 
         [HttpPost("[action]")]

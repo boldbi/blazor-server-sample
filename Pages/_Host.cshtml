@@ -52,7 +52,7 @@
                 dashboardId: dashboardId,
                 embedContainerId: "dashboard",
                 embedType: BoldBI.EmbedType.Component,
-                environment: environment=="enterprise"? BoldBI.Environment.Enterprise:BoldBI.Environment.Cloud,
+                environment: environment=="onpremise"? BoldBI.Environment.Enterprise:BoldBI.Environment.Cloud,
                 width: window.innerWidth + "px",
                 height: window.innerHeight + "px",
                 expirationTime: 100000,
