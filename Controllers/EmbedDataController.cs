@@ -18,12 +18,12 @@ namespace BoldBIEmbedSample.Controllers
     //[ApiController]
     public class EmbedDataController : Controller
     {
-        //private readonly IWebHostEnvironment hostingEnv;
+        private readonly IWebHostEnvironment hostingEnv;
 
-        //public EmbedDataController(IWebHostEnvironment env)
-        //{
-        //    this.hostingEnv = env;
-        //}
+        public EmbedDataController(IWebHostEnvironment env)
+        {
+            this.hostingEnv = env;
+        }
 
         public IActionResult EmbedConfigErrorLog()
         {
@@ -32,7 +32,8 @@ namespace BoldBIEmbedSample.Controllers
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
                 GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
-                  return RedirectToPage("/_Host");
+                return View("_Host");
+                //   return RedirectToPage("/_Host");
                 //return Pages()
             }
             catch

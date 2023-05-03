@@ -58,7 +58,7 @@
 //            try
 //            {
 //                string BasePath = AppDomain.CurrentDomain.BaseDirectory;
-//                string jsonString = File.ReadAllText(BasePath + "\\app_data\\embedConfig.json");
+//                string jsonString = File.ReadAllText(BasePath + "embedConfig.json");
 //                GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
 //            }
 //            catch (Exception)
@@ -67,6 +67,9 @@
 //            }
 
 //            app.UseRouting();
+//            //app.MapControllerRoute(
+//            //    name: "default",
+//            //    pattern: "{controller=EmbedData}/{action=EmbedConfigErrorLog}/{id?}");
 //            app.UseEndpoints(endpoints =>
 //            {
 //                endpoints.MapBlazorHub();
