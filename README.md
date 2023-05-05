@@ -64,6 +64,8 @@ The samples require the following requirements to run.
     </tbody>
     </table>
 
+ * Run the application.
+
 
 Please refer to the [help documentation](https://help.boldbi.com/embedded-bi/javascript-based/samples/v3.3.40-or-later/blazor-with-javascript/#how-to-run-blazor-server-sample) to know how to run the sample.
 
