@@ -13,22 +13,24 @@ This section guides you in using the Bold BI dashboard in your Blazor server sam
 
 The samples require the following requirements to run.
 
- * [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/)
+ * [Visual Studio Code](https://code.visualstudio.com/download)
  * [.NET Core 6.0 or later](https://dotnet.microsoft.com/en-us/download/dotnet-core)
 
  ## Using the Blazor server sample
  
- * Open the Blazor server sample's solution file `BoldBIEmbedSample.sln` in Visual studio. 
+ * Open the Blazor server sample in Visual Studio Code. 
 
- * Open the EmbedProperties.cs file in the following location, /Models/EmbedProperties.cs.
-
- * Please change the following properties in the `EmbedProperties.cs` file as per your Bold BI Server.
+  * This [link](https://help.boldbi.com/cloud-bi/site-administration/embed-settings/) using able to download the embedConfig.json file. 
+ 
+ * Copy the downloaded embedConfig.json file and paste it into the sample [application](https://github.com/boldbi/aspnet-core-sample/tree/master/BoldBI.Embed.Sample/BoldBI.Embed.Sample).
+ 
+ * The following properties are used in `embedConfig.json` file:
 
     <meta charset="utf-8"/>
     <table>
     <tbody>
         <tr>
-            <td align="left">RootUrl</td>
+            <td align="left">ServerUrl</td>
             <td align="left">Dashboard Server URL (Eg: http://localhost:5000/bi, http://demo.boldbi.com/bi).</td>
         </tr>
         <tr>
@@ -40,16 +42,24 @@ The samples require the following requirements to run.
             <td align="left">For the Bold BI Enterprise edition, it should be like `site/site1`. For Bold BI Cloud, it should be an empty string.</td>
         </tr>
         <tr>
-            <td align="left">DashboardId</td>
-            <td align="left">Provide the dashboard id of the dashboard you want to render.</td>
-        </tr>
-        <tr>
             <td align="left">Environment</td>
             <td align="left">Your Bold BI application environment. (If Cloud, you should use `cloud,` if Enterprise, you should use `enterprise`).</td>
         </tr>
         <tr>
             <td align="left">UserEmail</td>
             <td align="left">UserEmail of the Admin in your Bold BI, which would be used to get the dashboard list.</td>
+        </tr>
+        <tr>
+            <td align="left">DashboardId</td>
+            <td align="left">Item id of the dashboard to be embedded in your application.</td>
+        </tr>
+        <tr>
+            <td align="left">EmbedType</td>
+            <td align="left">BoldBI.EmbedType.Component.</td>
+        </tr>
+        <tr>
+            <td align="left">ExpirationTime</td>
+            <td align="left">Token expiration time.</td>
         </tr>
     </tbody>
     </table>
