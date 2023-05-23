@@ -39,8 +39,8 @@ namespace BoldBIEmbedSample.Controllers
         }
 
         [HttpPost("[action]")]
-        [Route("GetDetails")]
-        public string GetEmbedDetails([FromBody] object embedQuerString)
+        [Route("AuthorizationServer")]
+        public string AuthorizationServer([FromBody] object embedQuerString)
         {
             var embedClass = JsonConvert.DeserializeObject<EmbedClass>(embedQuerString.ToString());
             var embedQuery = embedClass.embedQuerString;
