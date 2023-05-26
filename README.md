@@ -43,7 +43,7 @@ This project was created using ASP.NET Core 6.0. The purpose of this application
 
   * Visual studio code(https://code.visualstudio.com/download)
 
-  ### How to run sample using visual studio code
+  ### Run a Sample Using Visual Studio Code
  
   1. Open the Blazor Server sample in Visual Studio Code. 
    
