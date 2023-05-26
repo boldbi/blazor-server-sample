@@ -1,6 +1,6 @@
-# BoldBI Embedded Sample in Blazor server sample
+# Bold BI Embedded Sample in Blazor Server
 
-This project was generated using Blazor Server version 6.0 or a later version that is installed on your system before it was compiled. This sample demonstrates how to embed the desired dashboard that is available in your Bold BI server.
+This project was created using ASP.NET Core 6.0. The purpose of this application is to demonstrate how to render the dashboard available on your Bold BI server.
 
 ## Dashboard view
 
@@ -10,31 +10,34 @@ This project was generated using Blazor Server version 6.0 or a later version th
 
  * [.NET Core 6.0](https://dotnet.microsoft.com/download/dotnet-core)
 
- ### Help link
+ #### Help link
 
  * https://help.boldbi.com/embedded-bi/faq/where-can-i-find-the-product-version/
 
- ### Supported browsers
+ #### Supported browsers
   
-  * Google Chrome, Microsoft Edge, Mozilla Firefox.
+  * Google Chrome, Microsoft Edge, Mozilla Firefox, and Safari.
 
  ## Configuration
 
-  * Ensure that you have enabled embed authentication on the embed settings [page](https://github.com/boldbi/aspnet-core-sample/assets/91586758/68695d1a-ebd0-4577-a6bb-d37e89e98379). If it is not enabled, enable it. Please refer to the following image.
-  ![Embed Settings](https://github.com/boldbi/aspnet-core-sample/assets/91586758/b3a81978-9eb4-42b2-92bb-d1e2735ab007)
+  * Please ensure that you have enabled embed authentication on the `embed settings` page. If it is not currently enabled, please refer to the following image or detailed [instructions](https://help.boldbi.com/site-administration/embed-settings/#get-embed-secret-code) to enable it.
 
-  * Download the embedConfig.json file by referring to this [link](https://help.boldbi.com/embedded-bi/site-administration/embed-settings/#get-embed-configuration-file). Please refer to the following image.
+    ![Embed Settings](https://github.com/boldbi/aspnet-core-sample/assets/91586758/b3a81978-9eb4-42b2-92bb-d1e2735ab007)
+
+  * To download the `embedConfig.json` file, please follow this [link](https://help.boldbi.com/site-administration/embed-settings/#get-embed-configuration-file) for reference. Additionally, you can refer to the following image for visual guidance.
+  
     ![Embed Settings Download](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d27d4cfc-6a3e-4c34-975e-f5f22dea6172)
     ![EmbedConfig Properties](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d6ce925a-0d4c-45d2-817e-24d6d59e0d63)
 
-  * Copy the downloaded embedConfig.json file and place it into the following [location](https://github.com/boldbi/blazor-server-sample) of the application. Please refer to the following image.
-  ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d4384bdd-3a96-422c-adb3-3d34cca8f9c7)
-
- ## How to run sample using command prompt 
-    
-  1. Open command prompt in this file [location](https://github.com/boldbi/blazor-server-sample).
+  * Copy the downloaded embedConfig.json file and paste it into the designated [location](https://github.com/boldbi/blazor-server-sample) within the application. Please ensure that you have placed it in the application as shown in the following image.
   
-  2. Run the application using the command `dotnet watch run`.
+    ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d4384bdd-3a96-422c-adb3-3d34cca8f9c7)
+
+ ## Run a Sample Using Command Prompt 
+    
+  1. Open the command prompt and navigate to the specified file [location](https://github.com/boldbi/blazor-server-sample) where the project is located.
+  
+  2. Finally, run the application using the command `dotnet watch run`.
 
  ## Developer IDE
 
@@ -44,8 +47,9 @@ This project was generated using Blazor Server version 6.0 or a later version th
  
   1. Open the Blazor Server sample in Visual Studio Code. 
    
-  2. Open the terminal in Visual Studio Code, run the application using the command `dotnet watch run`. After executing the command, the application will automatically launch in the default browser, accessible at the specific port number (https://localhost:5001). Please refer to the following image.
-    ![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/4af68f49-ffc0-400a-a323-55a3f3600a1d)
+  2. To run the application, use the command `dotnet watch run` in the terminal. After executing the command, the application will automatically launch in the default browser. You can access it at the specified port number (e.g., https://localhost:5001).
+
+     ![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/4af68f49-ffc0-400a-a323-55a3f3600a1d)
 
 Please refer to the [help documentation](https://help.boldbi.com/embedded-bi/javascript-based/samples/v3.3.40-or-later/blazor-with-javascript/#how-to-run-blazor-server-sample) to know how to run the sample.
 
