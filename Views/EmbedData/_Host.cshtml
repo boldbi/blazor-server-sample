@@ -24,12 +24,10 @@
     <script>
         var rootUrl = "@GlobalAppSettings.EmbedDetails.ServerUrl";
         var siteIdentifier = "@GlobalAppSettings.EmbedDetails.SiteIdentifier";
-        var environment = "@GlobalAppSettings.EmbedDetails.Environment";
         var dashboardId = "@GlobalAppSettings.EmbedDetails.DashboardId";
         var authorizationServerUrl = "/AuthorizationServer";
         
         $(document).ready(function () {
-            debugger;
             this.dashboard = BoldBI.create({
                 serverUrl: rootUrl + "/" + siteIdentifier,
                 dashboardId: dashboardId,
