@@ -33,11 +33,11 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
   
     ![EmbedConfig image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/d4384bdd-3a96-422c-adb3-3d34cca8f9c7)
 
- ## Run a Sample Using Command Prompt 
+ ## Run a Sample Using Command Line Interface 
     
-  1. Open the command prompt and navigate to the specified file [location](https://github.com/boldbi/blazor-server-sample) where the project is located.
+  1. Open the command line interface and navigate to the specified file [location](https://github.com/boldbi/blazor-server-sample) where the project is located.
   
-  2. Finally, run the application using the command `dotnet watch run`.
+  2. Finally, run the application using the command `dotnet watch run`. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., https://localhost:5001). Copy this URL and paste it into your default web browser.
 
  ## Developer IDE
 
@@ -47,7 +47,7 @@ This project was created using ASP.NET Core 6.0. This application aims to demons
  
   1. Open the Blazor Server sample in Visual Studio Code. 
    
-  2. To run the application, use the command `dotnet watch run` in the terminal. After executing the command, the application will automatically launch in the default browser. You can access it at the specified port number (e.g., https://localhost:5001).
+  2. To run the application, use the command `dotnet watch run` in the terminal. After the application has started, it will display a URL in the `command line interface`, typically something like (e.g., https://localhost:5001). Copy this URL and paste it into your default web browser.
 
      ![dashboard image](https://github.com/boldbi/aspnet-core-sample/assets/91586758/4af68f49-ffc0-400a-a323-55a3f3600a1d)
 
