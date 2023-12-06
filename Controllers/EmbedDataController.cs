@@ -30,6 +30,13 @@ namespace BoldBIEmbedSample.Controllers
                 string basePath = AppDomain.CurrentDomain.BaseDirectory;
                 string jsonString = System.IO.File.ReadAllText(Path.Combine(basePath, "embedConfig.json"));
                 GlobalAppSettings.EmbedDetails = JsonConvert.DeserializeObject<EmbedDetails>(jsonString);
+
+                // Pass specific properties to the view using ViewBag
+                ViewBag.DashboardId = GlobalAppSettings.EmbedDetails.DashboardId;
+                ViewBag.ServerUrl = GlobalAppSettings.EmbedDetails.ServerUrl;
+                ViewBag.EmbedType = GlobalAppSettings.EmbedDetails.EmbedType;
+                ViewBag.Environment = GlobalAppSettings.EmbedDetails.Environment;
+                ViewBag.SiteIdentifier = GlobalAppSettings.EmbedDetails.SiteIdentifier;
                 return View("_Host");
             }
             catch
@@ -42,6 +49,12 @@ namespace BoldBIEmbedSample.Controllers
         [Route("DashboardListing")]
         public ActionResult DashboardListing()
         {
+            // Pass specific properties to the view using ViewBag
+            ViewBag.DashboardId = GlobalAppSettings.EmbedDetails.DashboardId;
+            ViewBag.ServerUrl = GlobalAppSettings.EmbedDetails.ServerUrl;
+            ViewBag.EmbedType = GlobalAppSettings.EmbedDetails.EmbedType;
+            ViewBag.Environment = GlobalAppSettings.EmbedDetails.Environment;
+            ViewBag.SiteIdentifier = GlobalAppSettings.EmbedDetails.SiteIdentifier;
             return View("DashboardListing");
         }
 
