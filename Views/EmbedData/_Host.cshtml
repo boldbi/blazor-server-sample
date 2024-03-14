@@ -22,11 +22,11 @@
     <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/latest/boldbi-embed.js"></script>
     <link rel="stylesheet" href="~/css/site.css" />
     <script>
-        var rootUrl = "@GlobalAppSettings.EmbedDetails.ServerUrl";
-        var siteIdentifier = "@GlobalAppSettings.EmbedDetails.SiteIdentifier";
-        var dashboardId = "@GlobalAppSettings.EmbedDetails.DashboardId";
-        var embedType = "@GlobalAppSettings.EmbedDetails.EmbedType";
-        var environment = "@GlobalAppSettings.EmbedDetails.Environment";
+        var rootUrl = "@ViewBag.ServerUrl";
+        var dashboardId = "@ViewBag.DashboardId";
+        var siteIdentifier = "@ViewBag.SiteIdentifier";
+        var environment = "@ViewBag.Environment";
+        var embedType = "@ViewBag.EmbedType";
         var authorizationServerUrl = "/AuthorizationServer";
         
         $(document).ready(function () {
