@@ -40,16 +40,11 @@ function renderDashboard(dashboardId) {
         serverUrl: rootUrl + "/" + siteIdentifier,
         dashboardId: dashboardId,
         embedContainerId: "dashboard",
-        mode: BoldBI.Mode.View,
-        embedType: embedType,
-        environment: environment,
         width: "100%",
         height: "100%",
-        expirationTime: 10000,
         authorizationServer: {
             url: authorizationServerUrl  
         }
-
     });
 
     console.log(this.dashboard);
