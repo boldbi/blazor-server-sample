@@ -1,49 +1,28 @@
-﻿@page "/"
-@using BoldBIEmbedSample.Models
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using BoldBIEmbedSample.Models
 @{
     Layout = null;
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BoldBI Blazor Embed</title>
-    <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link href="css/site.css" rel="stylesheet" />
-</head>
-<body>
-
-    <div id="dashboard"></div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/latest/boldbi-embed.js"></script>
+    <script type="text/javascript" src="~/js/Index.js"></script>
     <link rel="stylesheet" href="~/css/site.css" />
-    <script>
+    <script type="text/javascript">
         var rootUrl = "@ViewBag.ServerUrl";
         var dashboardId = "@ViewBag.DashboardId";
         var siteIdentifier = "@ViewBag.SiteIdentifier";
         var environment = "@ViewBag.Environment";
         var embedType = "@ViewBag.EmbedType";
-        var authorizationServerUrl = "/AuthorizationServer";
-        
-        $(document).ready(function () {
-            this.dashboard = BoldBI.create({
-                serverUrl: rootUrl + "/" + siteIdentifier,
-                dashboardId: dashboardId,
-                embedContainerId: "dashboard",
-                width: "100%",
-                height: "100%",
-                authorizationServer: {
-                    url: authorizationServerUrl
-                }
-            });
-            this.dashboard.loadDashboard();
-        });
+        var authorizationServerUrl = "@Url.Action("AuthorizationServer", "EmbedData")";
     </script>
+</head>
+
+<body onload="renderDashboard(dashboardId)">
+    <div id="viewer-section" style="width: 100%";>
+        <div id="dashboard"></div>
+    </div>
 </body>
 </html>
-
-
