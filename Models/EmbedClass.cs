@@ -54,5 +54,6 @@ namespace BoldBIEmbedSample.Models
         public string EmbedType { get; set; }
 
         public string DashboardId { get; set; }
+        public string CurrentApplicationControllerPath { get; set; }
     }
 }

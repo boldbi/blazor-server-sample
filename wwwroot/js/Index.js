@@ -37,16 +37,20 @@ function ListDashboards(data) {
 
 function renderDashboard(dashboardId) {
     this.dashboard = BoldBI.create({
-        serverUrl: rootUrl + "/" + siteIdentifier,
+        serverUrl: currentApplicationControllerPath,
         dashboardId: dashboardId,
         embedContainerId: "dashboard",
         width: "100%",
         height: "100%",
-        authorizationServer: {
-            url: authorizationServerUrl  
-        }
+        enableDomainMasking: true,
+       // mode:"design"
+        //token: token
+        //authorizationServer: {
+        //    url: authorizationServerUrl  
+        //}
     });
 
-    console.log(this.dashboard);
+    //console.log(this.dashboard);
     this.dashboard.loadDashboard();
+    //this.dashboard.loadDesigner();
 };

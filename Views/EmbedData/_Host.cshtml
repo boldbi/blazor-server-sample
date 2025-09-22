@@ -7,16 +7,16 @@
 <html>
 <head>
     <title>BoldBI Blazor Embed</title>
-    <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/latest/boldbi-embed.js"></script>
-    <script type="text/javascript" src="~/js/Index.js"></script>
+    <script type="text/javascript" src="https://cdn.boldbi.com/embedded-sdk/v12.1.5/boldbi-embed.js"></script>
+    <script type="text/javascript" src="~/js/Index.js?v=1.0"></script>
     <link rel="stylesheet" href="~/css/site.css" />
     <script type="text/javascript">
-        var rootUrl = "@ViewBag.ServerUrl";
+        var currentApplicationControllerPath  = "@ViewBag.CurrentApplicationControllerPath ";
         var dashboardId = "@ViewBag.DashboardId";
         var siteIdentifier = "@ViewBag.SiteIdentifier";
         var environment = "@ViewBag.Environment";
         var embedType = "@ViewBag.EmbedType";
-        var authorizationServerUrl = "@Url.Action("AuthorizationServer", "EmbedData")";
+        var token = "@ViewBag.Token";
     </script>
 </head>
 
