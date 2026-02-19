@@ -35,18 +35,31 @@ function ListDashboards(data) {
     }
 }
 
-function renderDashboard(dashboardId) {
-    this.dashboard = BoldBI.create({
-        serverUrl: rootUrl + "/" + siteIdentifier,
-        dashboardId: dashboardId,
-        embedContainerId: "dashboard",
-        width: "100%",
-        height: "100%",
-        authorizationServer: {
-            url: authorizationServerUrl  
-        }
-    });
+function getEmbedToken() {
+    return fetch(tokenGenerationUrl, { // Backend application URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({})
+    })
+        .then(response => {
+            if (!response.ok) throw new Error("Token fetch failed");
+            return response.text();
+        });
+}
 
-    console.log(this.dashboard);
-    this.dashboard.loadDashboard();
+function renderDashboard(dashboardId) {
+    this.getEmbedToken()
+        .then(accessToken => {
+            const dashboard = BoldBI.create({
+                serverUrl: rootUrl + "/" + siteIdentifier,
+                dashboardId: dashboardId,
+                embedContainerId: "dashboard",
+                embedToken: accessToken
+            });
+
+            dashboard.loadDashboard();
+        })
+        .catch(err => {
+            console.error("Error rendering dashboard:", err);
+        });
 };
