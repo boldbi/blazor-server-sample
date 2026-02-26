@@ -17,15 +17,15 @@
         var siteIdentifier = "@ViewBag.SiteIdentifier";
         var environment = "@ViewBag.Environment";
         var embedType = "@ViewBag.EmbedType";
-        var authorizationServerUrl = "@Url.Action("AuthorizationServer", "EmbedData")";
         var getDashboardsUrl = "@Url.Action("GetDashboards", "EmbedData")";
+        var tokenGenerationUrl = "@Url.Action("TokenGeneration", "EmbedData")";
     </script>
 </head>
 
 <body onload="Init()">
     <div id="container">
         <div class="header-section">
-            <div id="grid-title">All Dashboard</div>
+            <div id="grid-title">All Dashboards</div>
         </div>
         <div id="panel">
         </div>
